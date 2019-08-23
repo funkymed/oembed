@@ -26,5 +26,14 @@ yarn build
 yarn start
 ```
 
+## In React
+
+```javascript
+import {OEmbed}  from 'funkymed-oembed'
+// ...
+componentDidMount() {
+    new OEmbed();
+}
+```
 
 

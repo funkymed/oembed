@@ -29,7 +29,7 @@ yarn start
 ## In React
 
 ```javascript
-import {OEmbed}  from 'funkymed-oembed'
+import {OEmbed}  from 'funkymed-oembed/dist/index'
 // ...
 componentDidMount() {
     new OEmbed();

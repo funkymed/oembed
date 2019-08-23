@@ -23,7 +23,9 @@ var Facebook = function (_Plugin) {
         return _possibleConstructorReturn(this, _Plugin.call(this, tag, 'facebook'));
     }
 
-    Facebook.prototype.convert = function convert() {};
+    Facebook.prototype.convert = function convert() {
+        this.url = "https://www.facebook.com/plugins/video.php?href=" + escape(this.url) + "&show_text=0&width=560";
+    };
 
     return Facebook;
 }(_Plugin3.default);

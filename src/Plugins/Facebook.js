@@ -7,5 +7,6 @@ export default class Facebook extends Plugin {
     }
 
     convert() {
+        this.url="https://www.facebook.com/plugins/video.php?href="+escape(this.url)+"&show_text=0&width=560";
     }
 }

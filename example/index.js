@@ -20,7 +20,6 @@ class Example extends Component
 
         return (
             <div>
-                Processing OEmbed...
             </div>
         );
     }

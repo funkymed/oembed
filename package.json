@@ -1,6 +1,6 @@
 {
   "name": "funkymed-oembed",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A simple tool to convert oembed in iframe with content, usefull with CKEditor",
   "main": "index.js",
   "scripts": {

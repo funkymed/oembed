@@ -24,11 +24,10 @@ var Youtube = function (_Plugin) {
     }
 
     Youtube.prototype.convert = function convert() {
-        var codeYoutube = this.url.split('https://www.youtube.com/watch?v=')[1];
+        var stringplitted = this.url.split('watch?v=');
+        var codeYoutube = stringplitted[stringplitted.length - 1];
         if (codeYoutube) {
             this.url = "https://youtube.com/embed/" + codeYoutube;
-            this.iframe.className = 'iframe-container';
-            this.iframe.id = 'ytplayer';
         } else {
             this.url = null;
         }

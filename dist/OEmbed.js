@@ -22,6 +22,10 @@ var _Youtube = require('./Plugins/Youtube');
 
 var _Youtube2 = _interopRequireDefault(_Youtube);
 
+var _Youtu = require('./Plugins/Youtu.be');
+
+var _Youtu2 = _interopRequireDefault(_Youtu);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -46,7 +50,7 @@ var OEmbed = function () {
     }
 
     OEmbed.prototype.getPlugin = function getPlugin(tag) {
-        var Plugins = [_Dailymotion2.default, _Vimeo2.default, _Youtube2.default, _Facebook2.default, _Twitter2.default];
+        var Plugins = [_Dailymotion2.default, _Vimeo2.default, _Youtube2.default, _Youtu2.default, _Facebook2.default, _Twitter2.default];
         for (var b in Plugins) {
             var p = new Plugins[b](tag);
             if (p.isPlugin()) {

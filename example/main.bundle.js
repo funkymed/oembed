@@ -63,12 +63,12 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 202);
+/******/ 	return __webpack_require__(__webpack_require__.s = 204);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 197:
+/***/ 198:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80,7 +80,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _Plugin2 = __webpack_require__(25);
+var _Plugin2 = __webpack_require__(21);
 
 var _Plugin3 = _interopRequireDefault(_Plugin2);
 
@@ -104,7 +104,8 @@ var Dailymotion = function (_Plugin) {
     _createClass(Dailymotion, [{
         key: 'convert',
         value: function convert() {
-            var codeVideo = this.url.split("https://www.dailymotion.com/video/")[1];
+            var stringplitted = this.url.split('/');
+            var codeVideo = stringplitted[stringplitted.length - 1];
             if (codeVideo) {
                 this.url = "https://www.dailymotion.com/embed/video/" + codeVideo;
             }
@@ -118,7 +119,7 @@ exports.default = Dailymotion;
 
 /***/ }),
 
-/***/ 198:
+/***/ 199:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -130,7 +131,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _Plugin2 = __webpack_require__(25);
+var _Plugin2 = __webpack_require__(21);
 
 var _Plugin3 = _interopRequireDefault(_Plugin2);
 
@@ -165,7 +166,7 @@ exports.default = Facebook;
 
 /***/ }),
 
-/***/ 199:
+/***/ 200:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -177,7 +178,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _Plugin2 = __webpack_require__(25);
+var _Plugin2 = __webpack_require__(21);
 
 var _Plugin3 = _interopRequireDefault(_Plugin2);
 
@@ -210,7 +211,7 @@ exports.default = Twitter;
 
 /***/ }),
 
-/***/ 200:
+/***/ 201:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -222,7 +223,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _Plugin2 = __webpack_require__(25);
+var _Plugin2 = __webpack_require__(21);
 
 var _Plugin3 = _interopRequireDefault(_Plugin2);
 
@@ -246,7 +247,8 @@ var Vimeo = function (_Plugin) {
     _createClass(Vimeo, [{
         key: 'convert',
         value: function convert() {
-            var codeVimeo = this.url.split('https://vimeo.com/')[1];
+            var stringplitted = this.url.split('/');
+            var codeVimeo = stringplitted[stringplitted.length - 1];
             this.url = 'https://player.vimeo.com/video/' + codeVimeo;
         }
     }]);
@@ -258,7 +260,7 @@ exports.default = Vimeo;
 
 /***/ }),
 
-/***/ 201:
+/***/ 202:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -270,7 +272,60 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _Plugin2 = __webpack_require__(25);
+var _Plugin2 = __webpack_require__(21);
+
+var _Plugin3 = _interopRequireDefault(_Plugin2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var YoutubeBE = function (_Plugin) {
+    _inherits(YoutubeBE, _Plugin);
+
+    function YoutubeBE(tag) {
+        _classCallCheck(this, YoutubeBE);
+
+        return _possibleConstructorReturn(this, (YoutubeBE.__proto__ || Object.getPrototypeOf(YoutubeBE)).call(this, tag, 'youtu.be'));
+    }
+
+    _createClass(YoutubeBE, [{
+        key: 'convert',
+        value: function convert() {
+            var stringplitted = this.url.split('/');
+            var codeYoutube = stringplitted[stringplitted.length - 1];
+            if (codeYoutube) {
+                this.url = "https://youtube.com/embed/" + codeYoutube;
+            } else {
+                this.url = null;
+            }
+        }
+    }]);
+
+    return YoutubeBE;
+}(_Plugin3.default);
+
+exports.default = YoutubeBE;
+
+/***/ }),
+
+/***/ 203:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _Plugin2 = __webpack_require__(21);
 
 var _Plugin3 = _interopRequireDefault(_Plugin2);
 
@@ -294,11 +349,10 @@ var Youtube = function (_Plugin) {
     _createClass(Youtube, [{
         key: 'convert',
         value: function convert() {
-            var codeYoutube = this.url.split('https://www.youtube.com/watch?v=')[1];
+            var stringplitted = this.url.split('watch?v=');
+            var codeYoutube = stringplitted[stringplitted.length - 1];
             if (codeYoutube) {
                 this.url = "https://youtube.com/embed/" + codeYoutube;
-                this.iframe.className = 'iframe-container';
-                this.iframe.id = 'ytplayer';
             } else {
                 this.url = null;
             }
@@ -312,7 +366,7 @@ exports.default = Youtube;
 
 /***/ }),
 
-/***/ 202:
+/***/ 204:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -333,7 +387,7 @@ exports.OEmbed = _OEmbed3.default;
 
 /***/ }),
 
-/***/ 25:
+/***/ 21:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -408,25 +462,29 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _Dailymotion = __webpack_require__(197);
+var _Dailymotion = __webpack_require__(198);
 
 var _Dailymotion2 = _interopRequireDefault(_Dailymotion);
 
-var _Facebook = __webpack_require__(198);
+var _Facebook = __webpack_require__(199);
 
 var _Facebook2 = _interopRequireDefault(_Facebook);
 
-var _Twitter = __webpack_require__(199);
+var _Twitter = __webpack_require__(200);
 
 var _Twitter2 = _interopRequireDefault(_Twitter);
 
-var _Vimeo = __webpack_require__(200);
+var _Vimeo = __webpack_require__(201);
 
 var _Vimeo2 = _interopRequireDefault(_Vimeo);
 
-var _Youtube = __webpack_require__(201);
+var _Youtube = __webpack_require__(203);
 
 var _Youtube2 = _interopRequireDefault(_Youtube);
+
+var _Youtu = __webpack_require__(202);
+
+var _Youtu2 = _interopRequireDefault(_Youtu);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -454,7 +512,7 @@ var OEmbed = function () {
     _createClass(OEmbed, [{
         key: 'getPlugin',
         value: function getPlugin(tag) {
-            var Plugins = [_Dailymotion2.default, _Vimeo2.default, _Youtube2.default, _Facebook2.default, _Twitter2.default];
+            var Plugins = [_Dailymotion2.default, _Vimeo2.default, _Youtube2.default, _Youtu2.default, _Facebook2.default, _Twitter2.default];
             for (var b in Plugins) {
                 var p = new Plugins[b](tag);
                 if (p.isPlugin()) {

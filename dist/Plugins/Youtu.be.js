@@ -14,24 +14,26 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Dailymotion = function (_Plugin) {
-    _inherits(Dailymotion, _Plugin);
+var YoutubeBE = function (_Plugin) {
+    _inherits(YoutubeBE, _Plugin);
 
-    function Dailymotion(tag) {
-        _classCallCheck(this, Dailymotion);
+    function YoutubeBE(tag) {
+        _classCallCheck(this, YoutubeBE);
 
-        return _possibleConstructorReturn(this, _Plugin.call(this, tag, 'dailymotion'));
+        return _possibleConstructorReturn(this, _Plugin.call(this, tag, 'youtu.be'));
     }
 
-    Dailymotion.prototype.convert = function convert() {
+    YoutubeBE.prototype.convert = function convert() {
         var stringplitted = this.url.split('/');
-        var codeVideo = stringplitted[stringplitted.length - 1];
-        if (codeVideo) {
-            this.url = "https://www.dailymotion.com/embed/video/" + codeVideo;
+        var codeYoutube = stringplitted[stringplitted.length - 1];
+        if (codeYoutube) {
+            this.url = "https://youtube.com/embed/" + codeYoutube;
+        } else {
+            this.url = null;
         }
     };
 
-    return Dailymotion;
+    return YoutubeBE;
 }(_Plugin3.default);
 
-exports.default = Dailymotion;
+exports.default = YoutubeBE;

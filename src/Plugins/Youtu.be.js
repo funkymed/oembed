@@ -1,13 +1,13 @@
 import Plugin from './Plugin'
 
-export default class Youtube extends Plugin {
+export default class YoutubeBE extends Plugin {
 
     constructor(tag) {
-        super(tag, 'youtube');
+        super(tag, 'youtu.be');
     }
 
     convert() {
-        var stringplitted = this.url.split('watch?v=');
+        var stringplitted = this.url.split('/');
         var codeYoutube = stringplitted[stringplitted.length-1];
         if (codeYoutube) {
             this.url = "https://youtube.com/embed/" + codeYoutube;

@@ -3,6 +3,7 @@ import Facebook from './Plugins/Facebook';
 import Twitter from './Plugins/Twitter';
 import Vimeo from './Plugins/Vimeo';
 import Youtube from './Plugins/Youtube';
+import YoutubeBE from './Plugins/Youtu.be';
 
 export default class OEmbed {
     constructor() {
@@ -22,7 +23,7 @@ export default class OEmbed {
     }
 
     getPlugin(tag) {
-        let Plugins = [Dailymotion, Vimeo, Youtube, Facebook, Twitter];
+        let Plugins = [Dailymotion, Vimeo, Youtube, YoutubeBE, Facebook, Twitter];
         for (const b in Plugins) {
             let p = new Plugins[b](tag);
             if (p.isPlugin()) {

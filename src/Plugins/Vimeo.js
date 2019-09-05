@@ -7,7 +7,8 @@ export default class Vimeo extends Plugin {
     }
 
     convert() {
-        var codeVimeo = this.url.split('https://vimeo.com/')[1];
+        var stringplitted = this.url.split('/');
+        var codeVimeo = stringplitted[stringplitted.length-1];
         this.url = 'https://player.vimeo.com/video/'+codeVimeo;
     }
 }

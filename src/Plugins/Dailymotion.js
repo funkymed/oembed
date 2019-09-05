@@ -7,7 +7,8 @@ export default class Dailymotion extends Plugin {
     }
 
     convert() {
-        var codeVideo = this.url.split("https://www.dailymotion.com/video/")[1];
+        var stringplitted = this.url.split('/');
+        var codeVideo = stringplitted[stringplitted.length-1];
         if (codeVideo) {
             this.url = "https://www.dailymotion.com/embed/video/" + codeVideo;
         }
